@@ -94,7 +94,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 51 "fnt/parser.y" /* yacc.c:1909  */
+#line 60 "fnt/parser.y" /* yacc.c:1909  */
 
         Simbolo *simbolo;
         Instruccion *instruccion;
