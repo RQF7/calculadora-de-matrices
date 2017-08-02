@@ -2299,8 +2299,8 @@ void iniciar_ncurses()
 	linea = malloc(sizeof(int) * x);
 	char *lin1 = "Calculadora de matrices";
 	char *lin2 = "Ricardo Quezada Figueroa";
-	char *lin3 = "Compiladores";
-	char *lin4 = "ESCOM - IPN";
+	char *lin3 = ""; //Compiladores
+	char *lin4 = ""; //ESCOM - IPN
 	char *lin5 = "Presiona <Enter> para iniciar";
 	attron(A_BOLD);
 	attron(COLOR_PAIR(1));
