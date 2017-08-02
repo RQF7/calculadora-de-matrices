@@ -68,7 +68,8 @@ void iniciar_codificacion()
 Dato_de_pila sacar_de_pila()
 {
 	if (apuntador_de_pila <= pila)
-		error_en_ejecucion("Apuntador de pila fuera de rango (por debajo)", (char *) 0);
+		error_en_ejecucion("Apuntador de pila fuera de rango (por debajo)", 
+			(char *) 0);
 	return *--apuntador_de_pila;
 
 }
@@ -76,7 +77,8 @@ Dato_de_pila sacar_de_pila()
 void meter_a_pila(Dato_de_pila d)
 {
 	if (apuntador_de_pila >= &pila[TAM_PILA])
-		error_en_ejecucion("Apuntador de pila fuera de rango (por arriba)", (char *) 0);
+		error_en_ejecucion("Apuntador de pila fuera de rango (por arriba)", 
+			(char *) 0);
 	*apuntador_de_pila++ = d;
 }
 
@@ -91,7 +93,8 @@ Instruccion *codificar(Instruccion instruccion)
 
 void ejecutar(Instruccion *instruccion)
 {
-	for (contador_de_programa = instruccion; *contador_de_programa != DETENER && !regresando; )
+	for (contador_de_programa = instruccion; 
+		*contador_de_programa != DETENER && !regresando; )
 		(*(*contador_de_programa++))();
 }
 
@@ -105,9 +108,11 @@ Matriz **obtener_argumento()
 {
 	long int num_arg =  (long int) *contador_de_programa++;
 	if(num_arg > apuntador_de_marco->numero_de_argumentos)
-		error_en_ejecucion(apuntador_de_marco->simbolo->nombre, "Argumentos insuficientes");
+		error_en_ejecucion(apuntador_de_marco->simbolo->nombre, 
+			"Argumentos insuficientes");
 
-	return &apuntador_de_marco->argumentos[num_arg - apuntador_de_marco->numero_de_argumentos].valor;
+	return &apuntador_de_marco->argumentos
+		[num_arg - apuntador_de_marco->numero_de_argumentos].valor;
 }
 
 void asignar()
@@ -220,7 +225,8 @@ void ejecutar_funcion_programa()
 
 	Dato_de_pila dato, resultado;
 	dato = sacar_de_pila();
-	resultado.valor = ejecutar_funcion(dato.valor, *(double (*)())(*contador_de_programa++));
+	resultado.valor = 
+		ejecutar_funcion(dato.valor, *(double (*)())(*contador_de_programa++));
 	meter_a_pila(resultado);
 }
 
@@ -319,7 +325,8 @@ void negar()
 	dato1 = sacar_de_pila();
 	mpz_t tmp;
 	mpz_init_set_si(tmp, -1);
-	resultado.valor = multiplica_matrices(dato1.valor, nueva_matriz_escalar(tmp));
+	resultado.valor = multiplica_matrices(dato1.valor, 
+		nueva_matriz_escalar(tmp));
 	mpz_clear(tmp);
 	meter_a_pila(resultado);
 }
@@ -504,13 +511,13 @@ void codigo_ciclo()
 	Dato_de_pila dato;
 	Instruccion *guardar_posicion = contador_de_programa;
 
-	ejecutar(*((Instruccion **) (guardar_posicion + 2)));			/* Inicializar */
-	ejecutar(*((Instruccion **) (guardar_posicion + 3)));			/* Condicion */
+	ejecutar(*((Instruccion **) (guardar_posicion + 2)));		/* Inicializar */
+	ejecutar(*((Instruccion **) (guardar_posicion + 3)));		/* Condicion */
 	dato = sacar_de_pila();
 	while (evaluar_matriz(dato.valor)) {
 		ejecutar(*((Instruccion **) (guardar_posicion)));
-		ejecutar(*((Instruccion **) (guardar_posicion + 4)));		/* Incremento */
-		ejecutar(*((Instruccion **) (guardar_posicion + 3)));		/* Condicion */
+		ejecutar(*((Instruccion **) (guardar_posicion + 4)));	/* Incremento */
+		ejecutar(*((Instruccion **) (guardar_posicion + 3)));	/* Condicion */
 		dato = sacar_de_pila();
 	}
 
@@ -657,6 +664,7 @@ void condicional()
 	resultado.valor = condicional_matrices(dato1.valor, dato2.valor);
 	meter_a_pila(resultado);
 }
+
 void bicondicional()
 {
 	if(DEBUG) {
@@ -707,10 +715,12 @@ void llamada()
 
 	Simbolo *simbolo = (Simbolo *) contador_de_programa[0];
 	if(apuntador_de_marco++ >= &marco[TAM_MARCOS - 1])
-		error_en_ejecucion(simbolo->nombre, "Pila de llamadas demasiado profunda");
+		error_en_ejecucion(simbolo->nombre, 
+			"Pila de llamadas demasiado profunda");
 
 	apuntador_de_marco->simbolo = simbolo;
-	apuntador_de_marco->numero_de_argumentos = (long int) contador_de_programa[1];
+	apuntador_de_marco->numero_de_argumentos = 
+		(long int) contador_de_programa[1];
 	apuntador_de_marco->direccion_de_retorno = contador_de_programa + 2;
 	apuntador_de_marco->argumentos = apuntador_de_pila - 1;
 	ejecutar(simbolo->u.definicion);
@@ -727,7 +737,8 @@ void regreso_de_funcion()
 
 	Dato_de_pila dato;
 	if(apuntador_de_marco->simbolo->tipo == PROCEDIMIENTO)
-		error_en_ejecucion(apuntador_de_marco->simbolo->nombre, "Procedimientos no regresan nada");
+		error_en_ejecucion(apuntador_de_marco->simbolo->nombre, 
+			"Procedimientos no regresan nada");
 	dato = sacar_de_pila();
 	regresar();
 	meter_a_pila(dato);
@@ -741,7 +752,8 @@ void regreso_de_procedimiento()
 	}
 
 	if(apuntador_de_marco->simbolo->tipo == FUNCION)
-		error_en_ejecucion(apuntador_de_marco->simbolo->nombre, "Las funciones deben regresar valores");
+		error_en_ejecucion(apuntador_de_marco->simbolo->nombre, 
+			"Las funciones deben regresar valores");
 	regresar();
 }
 
@@ -754,7 +766,8 @@ void regresar()
 
 	for (int i=0; i<apuntador_de_marco->numero_de_argumentos; i++)
 		sacar_de_pila();
-	contador_de_programa = (Instruccion *) apuntador_de_marco->direccion_de_retorno;
+	contador_de_programa = 
+		(Instruccion *) apuntador_de_marco->direccion_de_retorno;
 	--apuntador_de_marco;
 	regresando = 1;
 }

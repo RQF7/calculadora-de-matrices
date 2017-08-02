@@ -53,7 +53,8 @@ Simbolo *instalar (char *nombre, int tipo, Matriz *valor)
 Simbolo *buscar (char *nombre)
 {
 	Simbolo *iterador;
-	for(iterador = lista_simbolos; iterador != (Simbolo *) 0; iterador = iterador->siguiente)
+	for(iterador = lista_simbolos; iterador != (Simbolo *) 0; 
+		iterador = iterador->siguiente)
 		if(strcmp(iterador->nombre, nombre) == 0)
 			return iterador;
 	return 0;

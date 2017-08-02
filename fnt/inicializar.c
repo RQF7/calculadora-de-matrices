@@ -75,13 +75,15 @@ void inicializar()
 	Simbolo *simbolo;
 
 	/*for(indice = 0; constantes[indice].nombre; indice++)
-		instalar(strdup(constantes[indice].nombre), CONSTANTE, nueva_matriz_escalar(constantes[indice].valor));*/
+	  instalar(strdup(constantes[indice].nombre), CONSTANTE, nueva_matriz_escalar(constantes[indice].valor));*/
+
 	for(indice = 0; funciones[indice].nombre; indice++){
 		simbolo = instalar(strdup(funciones[indice].nombre), FUNCION_PRE, 0);
 		simbolo->u.funcion = funciones[indice].funcion;
 	}
 	for(indice = 0; palabras_clave[indice].nombre; indice++)
-		instalar(strdup(palabras_clave[indice].nombre), palabras_clave[indice].valor, 0);
+		instalar(strdup(palabras_clave[indice].nombre), 
+			palabras_clave[indice].valor, 0);
 
 	mpz_t res;
 	mpz_init_set_ui(res, 1);

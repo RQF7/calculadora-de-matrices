@@ -96,9 +96,9 @@ union YYSTYPE
 {
 #line 60 "fnt/parser.y" /* yacc.c:1909  */
 
-        Simbolo *simbolo;
-        Instruccion *instruccion;
-        int num_args;
+	Simbolo *simbolo;
+	Instruccion *instruccion;
+	int num_args;
 
 #line 104 "fnt/parser.tab.h" /* yacc.c:1909  */
 };

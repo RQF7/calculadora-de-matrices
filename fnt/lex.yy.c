@@ -553,10 +553,10 @@ void borrar(int posicion);
 int yywrap ();
 
 #define YY_INPUT(buf,result,max_size) \
-int contador = filtro_entrada(); \
-for(int i=0; i<contador; i++) \
-        buf[i] = linea[i]; \
-result = contador; \
+	int contador = filtro_entrada(); \
+	for(int i=0; i<contador; i++) \
+	buf[i] = linea[i]; \
+	result = contador; \
 
 #line 561 "lex.yy.c"
 #line 562 "lex.yy.c"
@@ -780,7 +780,7 @@ YY_DECL
 
 
 #line 60 "fnt/escaner.l"
- /* Espacios en blanco */
+	/* Espacios en blanco */
 #line 784 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
@@ -847,220 +847,225 @@ YY_RULE_SETUP
 case 2:
 YY_RULE_SETUP
 #line 64 "fnt/escaner.l"
-{ printw("Hasta la próxima.\n"); liberar_vector_str(historial); return 0; }
+{ printw("Hasta la próxima.\n"); 
+			  liberar_vector_str(historial); 
+			  return 0; }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 65 "fnt/escaner.l"
-{ printw("\nHasta la próxima.\n"); return 0; }
+#line 68 "fnt/escaner.l"
+{ printw("\nHasta la próxima.\n"); 
+			  return 0; }
 	YY_BREAK
 /* Impresión */
 case 3:
 YY_RULE_SETUP
-#line 68 "fnt/escaner.l"
+#line 72 "fnt/escaner.l"
 { return IMPRIMIR; }
 	YY_BREAK
 /* Operadores de asignación */
 case 4:
 YY_RULE_SETUP
-#line 71 "fnt/escaner.l"
+#line 75 "fnt/escaner.l"
 { return A_INCREMENTO; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 72 "fnt/escaner.l"
+#line 76 "fnt/escaner.l"
 { return A_DECREMENTO; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 73 "fnt/escaner.l"
+#line 77 "fnt/escaner.l"
 { return A_MULT; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 74 "fnt/escaner.l"
+#line 78 "fnt/escaner.l"
 { return A_DIVISION; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 75 "fnt/escaner.l"
+#line 79 "fnt/escaner.l"
 { return A_POTENCIA; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 76 "fnt/escaner.l"
+#line 80 "fnt/escaner.l"
 { return A_P_ESCALAR; }
 	YY_BREAK
 /* Incrementos/decrementos unitarios */
 case 10:
 YY_RULE_SETUP
-#line 79 "fnt/escaner.l"
+#line 83 "fnt/escaner.l"
 { return INC_UNITARIO; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 80 "fnt/escaner.l"
+#line 84 "fnt/escaner.l"
 { return DEC_UNITARIO; }
 	YY_BREAK
 /* Operadores lógicos */
 case 12:
 YY_RULE_SETUP
-#line 83 "fnt/escaner.l"
+#line 87 "fnt/escaner.l"
 { return MAQ; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 84 "fnt/escaner.l"
+#line 88 "fnt/escaner.l"
 { return MAI; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 85 "fnt/escaner.l"
+#line 89 "fnt/escaner.l"
 { return MEQ; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 86 "fnt/escaner.l"
+#line 90 "fnt/escaner.l"
 { return MEI; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 87 "fnt/escaner.l"
+#line 91 "fnt/escaner.l"
 { return IG; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 88 "fnt/escaner.l"
+#line 92 "fnt/escaner.l"
 { return DIS; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 89 "fnt/escaner.l"
+#line 93 "fnt/escaner.l"
 { return CONDICIONAL; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 90 "fnt/escaner.l"
+#line 94 "fnt/escaner.l"
 { return BICONDICIONAL; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 91 "fnt/escaner.l"
+#line 95 "fnt/escaner.l"
 { return CONJUNCION; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 92 "fnt/escaner.l"
+#line 96 "fnt/escaner.l"
 { return DISYUNCION; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 93 "fnt/escaner.l"
+#line 97 "fnt/escaner.l"
 { return DISYUNCION_EXCLUSIVA; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 94 "fnt/escaner.l"
+#line 98 "fnt/escaner.l"
 { return NEGACION; }
 	YY_BREAK
 /* Palabras reservadas */
 case 24:
 YY_RULE_SETUP
-#line 97 "fnt/escaner.l"
+#line 101 "fnt/escaner.l"
 { return MIENTRAS; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 98 "fnt/escaner.l"
+#line 102 "fnt/escaner.l"
 { return SI; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 99 "fnt/escaner.l"
+#line 103 "fnt/escaner.l"
 { return SINO; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 100 "fnt/escaner.l"
+#line 104 "fnt/escaner.l"
 { return CICLO; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 101 "fnt/escaner.l"
+#line 105 "fnt/escaner.l"
 { return FIN; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 102 "fnt/escaner.l"
+#line 106 "fnt/escaner.l"
 { return FUNC; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 103 "fnt/escaner.l"
+#line 107 "fnt/escaner.l"
 { return PROC; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 104 "fnt/escaner.l"
+#line 108 "fnt/escaner.l"
 { return REGRESAR; }
 	YY_BREAK
 /* Operadores compuestos */
 case 32:
 YY_RULE_SETUP
-#line 107 "fnt/escaner.l"
+#line 111 "fnt/escaner.l"
 { return P_ESCALAR; }
 	YY_BREAK
 /* Número */
 case 33:
 YY_RULE_SETUP
-#line 110 "fnt/escaner.l"
-{ mpz_t d;
-                                  mpz_init_set_str(d, yytext, 10);
-                                  yylval.simbolo = instalar(strdup(""), NUMERO, nueva_matriz_escalar(d));
-                                  return NUMERO; }
+#line 114 "fnt/escaner.l"
+{ 
+			mpz_t d;
+			mpz_init_set_str(d, yytext, 10);
+			yylval.simbolo = instalar(strdup(""), NUMERO, nueva_matriz_escalar(d));
+			return NUMERO; }
 	YY_BREAK
 /* Identificadores */
 case 34:
 YY_RULE_SETUP
-#line 116 "fnt/escaner.l"
-{ Simbolo *simbolo;
-                                  if((simbolo = buscar(yytext)) == 0)
-                                        simbolo = instalar(strdup(yytext), INDEFINIDO, 0);
-                                  yylval.simbolo = simbolo;
-                                  return simbolo->tipo == INDEFINIDO ? VARIABLE : simbolo->tipo; }
+#line 121 "fnt/escaner.l"
+{ 
+			Simbolo *simbolo;
+			if((simbolo = buscar(yytext)) == 0)
+				simbolo = instalar(strdup(yytext), INDEFINIDO, 0);
+			yylval.simbolo = simbolo;
+			return simbolo->tipo == INDEFINIDO ? VARIABLE : simbolo->tipo; }
 	YY_BREAK
 /* Argumentos */
 case 35:
 YY_RULE_SETUP
-#line 123 "fnt/escaner.l"
+#line 129 "fnt/escaner.l"
 { yylval.num_args = atoi(yytext + 1);
-                                  return ARGUMENTO; }
+			  return ARGUMENTO; }
 	YY_BREAK
 /* Cadenas */
 case 36:
 YY_RULE_SETUP
-#line 127 "fnt/escaner.l"
+#line 133 "fnt/escaner.l"
 { yylval.simbolo = (Simbolo *) reducir_cadena(strdup(yytext));
-                                  return CADENA; }
+			  return CADENA; }
 	YY_BREAK
 /* Saltos de línea */
 case 37:
 /* rule 37 can match eol */
 YY_RULE_SETUP
-#line 131 "fnt/escaner.l"
+#line 137 "fnt/escaner.l"
 { numero_de_linea++; return '\n'; }
 	YY_BREAK
 /* Todo lo demás */
 case 38:
 YY_RULE_SETUP
-#line 134 "fnt/escaner.l"
+#line 140 "fnt/escaner.l"
 { return yytext[0]; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 136 "fnt/escaner.l"
+#line 142 "fnt/escaner.l"
 ECHO;
 	YY_BREAK
-#line 1063 "lex.yy.c"
+#line 1068 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2063,159 +2068,159 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 136 "fnt/escaner.l"
+#line 142 "fnt/escaner.l"
 
 
 char *reducir_cadena(char *cadena)
 {
-        for(int i=0; i<strlen(cadena) - 2; i++)
-                cadena[i] = cadena[i+1];
-        cadena[strlen(cadena) - 2] = 0;
-        return cadena;
+	for(int i=0; i<strlen(cadena) - 2; i++)
+		cadena[i] = cadena[i+1];
+	cadena[strlen(cadena) - 2] = 0;
+	return cadena;
 }
 
 int filtro_entrada()
 {
-        int x, y;
-        int contador = 0;
-        getyx(stdscr, y, x);
-        int previos = x;
-        Contenedor_str *iterador = NULL;
+	int x, y;
+	int contador = 0;
+	getyx(stdscr, y, x);
+	int previos = x;
+	Contenedor_str *iterador = NULL;
 
-        if(historial != NULL)
-                iterador = historial->primero;
+	if(historial != NULL)
+		iterador = historial->primero;
 
-        while(1) {
+	while(1) {
 
-                getyx(stdscr, y, x);
-                int caracter = getch();
-                if(caracter == KEY_LEFT){
-                        if(x == previos) continue;
-                        move(y, x - 1);
-                        refresh();
-                        continue;
-                }
+		getyx(stdscr, y, x);
+		int caracter = getch();
+		if(caracter == KEY_LEFT){
+			if(x == previos) continue;
+			move(y, x - 1);
+			refresh();
+			continue;
+		}
 
-                if(caracter == KEY_RIGHT){
-                        if(x - previos == contador) continue;
-                        move(y, x + 1);
-                        refresh();
-                        continue;
-                }
+		if(caracter == KEY_RIGHT){
+			if(x - previos == contador) continue;
+			move(y, x + 1);
+			refresh();
+			continue;
+		}
 
-                if(caracter == KEY_UP){
-                        if(iterador == NULL) continue;
-                        for(int i=x; i>previos; i--) {
-                                move(y, i - 1);
-                                delch();
-                                refresh();
-                        }
-                        for(contador=0; contador<strlen(iterador->cadena); contador++) {
-                                linea[contador] = iterador->cadena[contador];
-                                addch(linea[contador]);
-                                refresh();
-                        }
-                        if(iterador->siguiente != NULL)
-                                iterador = iterador->siguiente;
-                }
+		if(caracter == KEY_UP){
+			if(iterador == NULL) continue;
+			for(int i=x; i>previos; i--) {
+				move(y, i - 1);
+				delch();
+				refresh();
+			}
+			for(contador=0; contador<strlen(iterador->cadena); contador++) {
+				linea[contador] = iterador->cadena[contador];
+				addch(linea[contador]);
+				refresh();
+			}
+			if(iterador->siguiente != NULL)
+				iterador = iterador->siguiente;
+		}
 
-                if(caracter == KEY_DOWN){
-                        for(int i=x; i>previos; i--) {
-                                move(y, i- 1);
-                                delch();
-                                refresh();
-                        }
-                        contador = 0;
-                        if(iterador == NULL) continue;
-                        if(iterador->anterior != NULL)
-                                iterador = iterador->anterior;
-                        else continue;
-                        for(contador=0; contador<strlen(iterador->cadena); contador++) {
-                                linea[contador] = iterador->cadena[contador];
-                                addch(linea[contador]);
-                                refresh();
-                        }
-                }
+		if(caracter == KEY_DOWN){
+			for(int i=x; i>previos; i--) {
+				move(y, i- 1);
+				delch();
+				refresh();
+			}
+			contador = 0;
+			if(iterador == NULL) continue;
+			if(iterador->anterior != NULL)
+				iterador = iterador->anterior;
+			else continue;
+			for(contador=0; contador<strlen(iterador->cadena); contador++) {
+				linea[contador] = iterador->cadena[contador];
+				addch(linea[contador]);
+				refresh();
+			}
+		}
 
-                if(caracter == 127){ //Borrar
-                        if(x == previos) continue;
-                        move(y, x - 1);
-                        contador--;
-                        borrar(x - previos - 1);
-                        delch();
-                        refresh();
-                        continue;
-                }
+		if(caracter == 127){ //Borrar
+			if(x == previos) continue;
+			move(y, x - 1);
+			contador--;
+			borrar(x - previos - 1);
+			delch();
+			refresh();
+			continue;
+		}
 
-                if(caracter == 9) { //TAB
-                        if(x - previos == contador){
-                                for(int i=0; i<8; i++) {
-                                        linea[contador] = ' ';
-                                        contador++;
-                                        addch(' ');
-                                        refresh();
-                                }
-                        }
-                }
+		if(caracter == 9) { //TAB
+			if(x - previos == contador){
+				for(int i=0; i<8; i++) {
+					linea[contador] = ' ';
+					contador++;
+					addch(' ');
+					refresh();
+				}
+			}
+		}
 
-                if(isprint(caracter)) {
+		if(isprint(caracter)) {
 
-                        if(x - previos == contador){
-                                linea[contador] = caracter;
-                                contador++;
-                                addch(caracter);
-                                refresh();
-                        }else{
-                                int respaldo = x;
-                                contador++;
-                                while(x - previos != contador){
-                                        int aux = linea[x - previos];
-                                        linea[x - previos] = caracter;
-                                        addch(caracter);
-                                        caracter = aux;
-                                        x++;
-                                }
-                                move(y, respaldo + 1);
-                        }
+			if(x - previos == contador){
+				linea[contador] = caracter;
+				contador++;
+				addch(caracter);
+				refresh();
+			}else{
+				int respaldo = x;
+				contador++;
+				while(x - previos != contador){
+					int aux = linea[x - previos];
+					linea[x - previos] = caracter;
+					addch(caracter);
+					caracter = aux;
+					x++;
+				}
+				move(y, respaldo + 1);
+			}
 
-                }
+		}
 
-                if(caracter == '\n') {
-                        linea[contador] = caracter;
-                        contador++;
-                        if(x - previos == contador)
-                                addch(caracter);
-                        else
-                                mvaddch(y, previos + contador, caracter);
-                        if(contador > 1)
-                                agregar_a_historial(contador);
-                        return contador;
-                }
-        }
+		if(caracter == '\n') {
+			linea[contador] = caracter;
+			contador++;
+			if(x - previos == contador)
+				addch(caracter);
+			else
+				mvaddch(y, previos + contador, caracter);
+			if(contador > 1)
+				agregar_a_historial(contador);
+			return contador;
+		}
+	}
 }
 
 void agregar_a_historial(int longitud)
 {
-        char *nueva_cadena = malloc(sizeof(char) * longitud);
-        for(int i=0; i<longitud-1; i++)
-                nueva_cadena[i] = linea[i];
-        nueva_cadena[longitud -1] = 0;
-        if(historial == NULL)
-                historial = nuevo_vector_str(nueva_cadena);
-        else
-                agregar_a_vector_str(historial, nueva_cadena);
+	char *nueva_cadena = malloc(sizeof(char) * longitud);
+	for(int i=0; i<longitud-1; i++)
+		nueva_cadena[i] = linea[i];
+	nueva_cadena[longitud -1] = 0;
+	if(historial == NULL)
+		historial = nuevo_vector_str(nueva_cadena);
+	else
+		agregar_a_vector_str(historial, nueva_cadena);
 }
 
 void borrar(int posicion)
 {
-        int aux, num_elementos;
-        getmaxyx(stdscr, aux, num_elementos);
-        for(int i = posicion; posicion < num_elementos - 1; posicion++)
-                linea[posicion] = linea[posicion + 1];
+	int aux, num_elementos;
+	getmaxyx(stdscr, aux, num_elementos);
+	for(int i = posicion; posicion < num_elementos - 1; posicion++)
+		linea[posicion] = linea[posicion + 1];
 }
 
 int yywrap ()
 {
-        return 1;
+	return 1;
 }
 

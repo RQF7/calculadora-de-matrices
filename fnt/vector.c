@@ -1,4 +1,5 @@
 /* vector.c
+ *
  * Operaciones sobre estructura de vector.
  * vim: set foldmethod=indent :
  *

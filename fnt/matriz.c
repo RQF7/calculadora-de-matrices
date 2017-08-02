@@ -44,10 +44,13 @@ Matriz *copiar_matriz(Matriz *matriz);
 Matriz *nueva_matriz(VVectores *vvectores)
 {
 	Matriz *resultado;
-	resultado = nueva_matriz_vacia(vvectores->num_elementos, vvectores->primero->vector->num_elementos);
+	resultado = nueva_matriz_vacia(vvectores->num_elementos, 
+		vvectores->primero->vector->num_elementos);
 
 	int l = 0, m;
-	for(VVectores_contenedor *i = vvectores->primero; i != NULL; i = i->siguiente) {
+	for(VVectores_contenedor *i = vvectores->primero; i != NULL; 
+		i = i->siguiente) {
+
 		m = 0;
 		for(Contenedor *j = i->vector->primero; j != NULL; j = j->siguiente) {
 			mpz_set(resultado->datos[l][m], j->valor);
@@ -59,6 +62,7 @@ Matriz *nueva_matriz(VVectores *vvectores)
 			raise(SIGUSR1);
 		}
 		l++;
+
 	}
 	return resultado;
 }
@@ -196,7 +200,8 @@ Matriz *potencia_escalar(Matriz *a, Matriz *b)
 	Matriz *resultado = nueva_matriz_vacia(a->filas, a->columnas);
 	for(int i=0; i<a->filas; i++)
 		for(int j=0; j<a->columnas; j++)
-			mpz_pow_ui(resultado->datos[i][j], a->datos[i][j], mpz_get_ui(b->datos[0][0]));
+			mpz_pow_ui(resultado->datos[i][j], a->datos[i][j], 
+				mpz_get_ui(b->datos[0][0]));
 
 	return resultado;
 }
@@ -210,7 +215,7 @@ Matriz *mayor_que_matrices(Matriz *a, Matriz *b)
 		raise(SIGUSR1);
 	}
 
- 	int tmp = mpz_cmp(a->datos[0][0], b->datos[0][0]);
+	int tmp = mpz_cmp(a->datos[0][0], b->datos[0][0]);
 	Matriz *resultado = nueva_matriz_vacia(1, 1);
 	if(tmp > 0)
 		mpz_set_ui(resultado->datos[0][0], 1);
@@ -325,7 +330,8 @@ Matriz *disyuncion_matrices(Matriz *a, Matriz *b)
 	}
 
 	Matriz *resultado = nueva_matriz_vacia(1, 1);
-	mpz_set_ui(resultado->datos[0][0], mpz_get_ui(a->datos[0][0]) || mpz_get_ui(b->datos[0][0]));
+	mpz_set_ui(resultado->datos[0][0], 
+		mpz_get_ui(a->datos[0][0]) || mpz_get_ui(b->datos[0][0]));
 	return resultado;
 }
 
@@ -355,7 +361,8 @@ Matriz *conjuncion_matrices(Matriz *a, Matriz *b)
 	}
 
 	Matriz *resultado = nueva_matriz_vacia(1, 1);
-	mpz_set_ui(resultado->datos[0][0], mpz_get_ui(a->datos[0][0]) && mpz_get_ui(b->datos[0][0]));
+	mpz_set_ui(resultado->datos[0][0], 
+		mpz_get_ui(a->datos[0][0]) && mpz_get_ui(b->datos[0][0]));
 	return resultado;
 }
 
@@ -369,7 +376,8 @@ Matriz *condicional_matrices(Matriz *a, Matriz *b)
 	}
 
 	Matriz *resultado = nueva_matriz_vacia(1, 1);
-	mpz_set_ui(resultado->datos[0][0], !mpz_get_ui(a->datos[0][0]) || mpz_get_ui(b->datos[0][0]));
+	mpz_set_ui(resultado->datos[0][0], 
+		!mpz_get_ui(a->datos[0][0]) || mpz_get_ui(b->datos[0][0]));
 	return resultado;
 }
 
@@ -419,7 +427,8 @@ Matriz *ejecutar_funcion(Matriz *matriz, double (*funcion)())
 	Matriz *resultado = nueva_matriz_vacia(matriz->filas, matriz->columnas);
 	for(int i=0; i<matriz->filas; i++)
 		for(int j=0; j<matriz->columnas; j++)
-			mpz_set_ui(resultado->datos[i][j], (unsigned int) funcion( (double) mpz_get_ui(matriz->datos[i][j])));
+			mpz_set_ui(resultado->datos[i][j], (unsigned int) 
+				funcion( (double) mpz_get_ui(matriz->datos[i][j])));
 	return resultado;
 }
 
@@ -558,7 +567,8 @@ Matriz *suma_escalar(Matriz *escalar, Matriz *matriz)
 	Matriz *resultado = nueva_matriz_vacia(matriz->filas, matriz->columnas);
 	for(int i=0; i<matriz->filas; i++)
 		for(int j=0; j<matriz->columnas; j++)
-			mpz_add(resultado->datos[i][j], matriz->datos[i][j], escalar->datos[0][0]);
+			mpz_add(resultado->datos[i][j], matriz->datos[i][j], 
+				escalar->datos[0][0]);
 
 	return resultado;
 }
@@ -568,7 +578,8 @@ Matriz *resta_escalar_izq (Matriz *escalar, Matriz *matriz)
 	Matriz *resultado = nueva_matriz_vacia(matriz->filas, matriz->columnas);
 	for(int i=0; i<matriz->filas; i++)
 		for(int j=0; j<matriz->columnas; j++)
-			mpz_sub(resultado->datos[i][j], escalar->datos[0][0], matriz->datos[i][j]);
+			mpz_sub(resultado->datos[i][j], escalar->datos[0][0], 
+				matriz->datos[i][j]);
 
 	return resultado;
 }
@@ -578,7 +589,8 @@ Matriz *resta_escalar_der (Matriz *matriz, Matriz *escalar)
 	Matriz *resultado = nueva_matriz_vacia(matriz->filas, matriz->columnas);
 	for(int i=0; i<matriz->filas; i++)
 		for(int j=0; j<matriz->columnas; j++)
-			mpz_sub(resultado->datos[i][j], matriz->datos[i][j], escalar->datos[0][0]);
+			mpz_sub(resultado->datos[i][j], matriz->datos[i][j], 
+				escalar->datos[0][0]);
 
 	return resultado;
 }
@@ -588,7 +600,8 @@ Matriz *producto_escalar(Matriz *escalar, Matriz *matriz)
 	Matriz *resultado = nueva_matriz_vacia(matriz->filas, matriz->columnas);
 	for(int i=0; i<matriz->filas; i++)
 		for(int j=0; j<matriz->columnas; j++)
-			mpz_mul(resultado->datos[i][j], matriz->datos[i][j], escalar->datos[0][0]);
+			mpz_mul(resultado->datos[i][j], matriz->datos[i][j], 
+				escalar->datos[0][0]);
 
 	return resultado;
 }

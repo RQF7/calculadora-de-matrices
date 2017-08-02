@@ -181,9 +181,9 @@ union YYSTYPE
 {
 #line 60 "fnt/parser.y" /* yacc.c:355  */
 
-        Simbolo *simbolo;
-        Instruccion *instruccion;
-        int num_args;
+	Simbolo *simbolo;
+	Instruccion *instruccion;
+	int num_args;
 
 #line 189 "fnt/parser.tab.c" /* yacc.c:355  */
 };
@@ -503,16 +503,16 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   103,   103,   104,   105,   107,   109,   111,   112,   113,
-     114,   118,   120,   122,   125,   128,   131,   134,   137,   141,
-     144,   149,   150,   151,   153,   155,   158,   160,   162,   165,
-     171,   174,   177,   181,   185,   188,   189,   190,   193,   195,
-     196,   199,   200,   201,   202,   203,   205,   206,   208,   210,
-     211,   212,   213,   214,   215,   216,   217,   218,   219,   220,
-     221,   222,   223,   224,   225,   226,   227,   228,   229,   230,
-     231,   232,   235,   238,   239,   242,   243,   244,   247,   250,
-     251,   252,   253,   256,   256,   259,   259,   264,   265,   266,
-     269,   270,   271
+       0,   104,   104,   105,   109,   113,   117,   121,   125,   129,
+     133,   139,   143,   147,   152,   157,   162,   167,   172,   178,
+     183,   190,   193,   196,   200,   204,   209,   212,   215,   220,
+     228,   233,   237,   243,   249,   255,   257,   260,   266,   269,
+     272,   277,   279,   282,   285,   288,   292,   294,   298,   303,
+     306,   309,   312,   315,   318,   321,   324,   327,   330,   333,
+     336,   339,   342,   345,   348,   351,   354,   357,   360,   363,
+     366,   369,   374,   379,   382,   387,   390,   393,   399,   403,
+     406,   409,   412,   418,   417,   426,   425,   435,   436,   437,
+     442,   444,   447
 };
 #endif
 
@@ -1469,559 +1469,564 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 104 "fnt/parser.y" /* yacc.c:1646  */
-    { printw("Expresión> "); refresh(); }
-#line 1475 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 106 "fnt/parser.y" /* yacc.c:1646  */
+    { printw("Expresión> "); 
+			  refresh(); }
+#line 1476 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 105 "fnt/parser.y" /* yacc.c:1646  */
+#line 110 "fnt/parser.y" /* yacc.c:1646  */
     { printw("\nExpresión> ");
-                                                          refresh(); }
-#line 1482 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  refresh(); }
+#line 1483 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 107 "fnt/parser.y" /* yacc.c:1646  */
+#line 114 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(asignar_default, imprimir_exp, DETENER);
-                                                          return 1; }
-#line 1489 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  return 1; }
+#line 1490 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 109 "fnt/parser.y" /* yacc.c:1646  */
+#line 118 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(asignar_default, instruccion_vacia, DETENER);
-                                                          return 1; }
-#line 1496 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  return 1; }
+#line 1497 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 111 "fnt/parser.y" /* yacc.c:1646  */
-    { codificar2(imprimir, DETENER); return 1; }
-#line 1502 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 122 "fnt/parser.y" /* yacc.c:1646  */
+    { codificar2(imprimir, DETENER); 
+			  return 1; }
+#line 1504 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 112 "fnt/parser.y" /* yacc.c:1646  */
-    { codificar2(instruccion_vacia, DETENER); return 1; }
-#line 1508 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 126 "fnt/parser.y" /* yacc.c:1646  */
+    { codificar2(instruccion_vacia, DETENER); 
+			  return 1; }
+#line 1511 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 113 "fnt/parser.y" /* yacc.c:1646  */
-    { codificar(DETENER); return 1; }
-#line 1514 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 130 "fnt/parser.y" /* yacc.c:1646  */
+    { codificar(DETENER); 
+			  return 1; }
+#line 1518 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 114 "fnt/parser.y" /* yacc.c:1646  */
+#line 134 "fnt/parser.y" /* yacc.c:1646  */
     { yyerrok; printw("\nExpresión> ");
-                                                          refresh(); }
-#line 1521 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  refresh(); }
+#line 1525 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 118 "fnt/parser.y" /* yacc.c:1646  */
+#line 140 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = (yyvsp[0].instruccion);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
-#line 1528 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
+#line 1532 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 120 "fnt/parser.y" /* yacc.c:1646  */
+#line 144 "fnt/parser.y" /* yacc.c:1646  */
     { solo_definicion("$"); (yyval.instruccion) = (yyvsp[0].instruccion);
-                                                          codificar2(asignar_argumento, (Instruccion) (long int) (yyvsp[-2].num_args)); }
-#line 1535 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar2(asignar_argumento, (Instruccion) (long int) (yyvsp[-2].num_args)); }
+#line 1539 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 122 "fnt/parser.y" /* yacc.c:1646  */
+#line 148 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(meter_variable, (Instruccion)(yyvsp[-2].simbolo), evaluar);
-                                                          codificar2(voltear_operandos, sumar); (yyval.instruccion) = (yyvsp[0].instruccion);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
-#line 1543 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar2(voltear_operandos, sumar); (yyval.instruccion) = (yyvsp[0].instruccion);
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
+#line 1547 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 125 "fnt/parser.y" /* yacc.c:1646  */
+#line 153 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(meter_variable, (Instruccion)(yyvsp[-2].simbolo), evaluar);
-                                                          codificar2(voltear_operandos, restar); (yyval.instruccion) = (yyvsp[0].instruccion);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
-#line 1551 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar2(voltear_operandos, restar); (yyval.instruccion) = (yyvsp[0].instruccion);
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
+#line 1555 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 128 "fnt/parser.y" /* yacc.c:1646  */
+#line 158 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(meter_variable, (Instruccion)(yyvsp[-2].simbolo), evaluar);
-                                                          codificar2(voltear_operandos, multiplicar); (yyval.instruccion) = (yyvsp[0].instruccion);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
-#line 1559 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar2(voltear_operandos, multiplicar); (yyval.instruccion) = (yyvsp[0].instruccion);
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
+#line 1563 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 131 "fnt/parser.y" /* yacc.c:1646  */
+#line 163 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(meter_variable, (Instruccion)(yyvsp[-2].simbolo), evaluar);
-                                                          codificar2(voltear_operandos, dividir); (yyval.instruccion) = (yyvsp[0].instruccion);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
-#line 1567 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar2(voltear_operandos, dividir); (yyval.instruccion) = (yyvsp[0].instruccion);
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
+#line 1571 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 134 "fnt/parser.y" /* yacc.c:1646  */
+#line 168 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(meter_variable, (Instruccion)(yyvsp[-2].simbolo), evaluar);
-                                                          codificar2(voltear_operandos, elevar_a_potencia); (yyval.instruccion) = (yyvsp[0].instruccion);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
-#line 1575 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar2(voltear_operandos, elevar_a_potencia); (yyval.instruccion) = (yyvsp[0].instruccion);
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
+#line 1579 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 137 "fnt/parser.y" /* yacc.c:1646  */
+#line 173 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(meter_variable, (Instruccion)(yyvsp[-2].simbolo), evaluar);
-                                                          codificar2(voltear_operandos, elevar_a_potencia_escalar);
-                                                          (yyval.instruccion) = (yyvsp[0].instruccion);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
-#line 1584 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar2(voltear_operandos, elevar_a_potencia_escalar);
+			  (yyval.instruccion) = (yyvsp[0].instruccion);
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-2].simbolo), asignar); }
+#line 1588 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 141 "fnt/parser.y" /* yacc.c:1646  */
+#line 179 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(meter_variable, (Instruccion)(yyvsp[-1].simbolo), evaluar);
-                                                          codificar(incremento_unitario);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-1].simbolo), asignar);}
-#line 1592 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar(incremento_unitario);
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-1].simbolo), asignar);}
+#line 1596 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 144 "fnt/parser.y" /* yacc.c:1646  */
+#line 184 "fnt/parser.y" /* yacc.c:1646  */
     { codificar3(meter_variable, (Instruccion)(yyvsp[-1].simbolo), evaluar);
-                                                          codificar(decremento_unitario);
-                                                          codificar3(meter_variable, (Instruccion) (yyvsp[-1].simbolo), asignar); }
-#line 1600 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar(decremento_unitario);
+			  codificar3(meter_variable, (Instruccion) (yyvsp[-1].simbolo), asignar); }
+#line 1604 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 149 "fnt/parser.y" /* yacc.c:1646  */
+#line 191 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(instruccion_imprimir); (yyval.instruccion) = (yyvsp[0].instruccion); }
-#line 1606 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1610 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 150 "fnt/parser.y" /* yacc.c:1646  */
+#line 194 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = (yyvsp[0].instruccion); }
-#line 1612 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1616 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 151 "fnt/parser.y" /* yacc.c:1646  */
+#line 197 "fnt/parser.y" /* yacc.c:1646  */
     { solo_definicion("return");
-                                                          codificar(regreso_de_procedimiento); }
-#line 1619 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar(regreso_de_procedimiento); }
+#line 1623 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 153 "fnt/parser.y" /* yacc.c:1646  */
+#line 201 "fnt/parser.y" /* yacc.c:1646  */
     { solo_definicion("return");
-                                                          codificar(regreso_de_funcion); (yyval.instruccion) = (yyvsp[0].instruccion); }
-#line 1626 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar(regreso_de_funcion); (yyval.instruccion) = (yyvsp[0].instruccion); }
+#line 1630 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 155 "fnt/parser.y" /* yacc.c:1646  */
-    {
-                                                          (yyval.instruccion) = (yyvsp[-3].instruccion);
-                                                          codificar3(llamada, (Instruccion) (yyvsp[-4].simbolo), (Instruccion) (long int) (yyvsp[-1].num_args)); }
-#line 1634 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 205 "fnt/parser.y" /* yacc.c:1646  */
+    { (yyval.instruccion) = (yyvsp[-3].instruccion);
+			  codificar3(llamada, (Instruccion) (yyvsp[-4].simbolo), 
+				  (Instruccion) (long int) (yyvsp[-1].num_args)); }
+#line 1638 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 158 "fnt/parser.y" /* yacc.c:1646  */
-    {
-                                                          ((yyvsp[-5].instruccion))[1] = (Instruccion)(yyvsp[-1].instruccion); ((yyvsp[-5].instruccion))[2] = (Instruccion)(yyvsp[0].instruccion); }
-#line 1641 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 210 "fnt/parser.y" /* yacc.c:1646  */
+    { ((yyvsp[-5].instruccion))[1] = (Instruccion)(yyvsp[-1].instruccion); ((yyvsp[-5].instruccion))[2] = (Instruccion)(yyvsp[0].instruccion); }
+#line 1644 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 160 "fnt/parser.y" /* yacc.c:1646  */
-    {
-                                                          ((yyvsp[-5].instruccion))[1] = (Instruccion)(yyvsp[-1].instruccion); ((yyvsp[-5].instruccion))[3] = (Instruccion)(yyvsp[0].instruccion); }
-#line 1648 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 213 "fnt/parser.y" /* yacc.c:1646  */
+    { ((yyvsp[-5].instruccion))[1] = (Instruccion)(yyvsp[-1].instruccion); ((yyvsp[-5].instruccion))[3] = (Instruccion)(yyvsp[0].instruccion); }
+#line 1650 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 162 "fnt/parser.y" /* yacc.c:1646  */
-    {
-                                                          ((yyvsp[-10].instruccion))[1] = (Instruccion)(yyvsp[-6].instruccion); ((yyvsp[-10].instruccion))[2] = (Instruccion)(yyvsp[-1].instruccion);
-                                                          ((yyvsp[-10].instruccion))[3] = (Instruccion)(yyvsp[0].instruccion); }
-#line 1656 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 217 "fnt/parser.y" /* yacc.c:1646  */
+    { ((yyvsp[-10].instruccion))[1] = (Instruccion)(yyvsp[-6].instruccion); ((yyvsp[-10].instruccion))[2] = (Instruccion)(yyvsp[-1].instruccion);
+			  ((yyvsp[-10].instruccion))[3] = (Instruccion)(yyvsp[0].instruccion); }
+#line 1657 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 165 "fnt/parser.y" /* yacc.c:1646  */
-    {
-                                                          ((yyvsp[-9].instruccion))[1] = (Instruccion)(yyvsp[-1].instruccion); ((yyvsp[-9].instruccion))[2] = (Instruccion)(yyvsp[0].instruccion);
-                                                          ((yyvsp[-9].instruccion))[3] = (Instruccion)(yyvsp[-8].instruccion); ((yyvsp[-9].instruccion))[4] = (Instruccion)(yyvsp[-6].instruccion);
-                                                          ((yyvsp[-9].instruccion))[5] = (Instruccion)(yyvsp[-4].instruccion); }
+#line 222 "fnt/parser.y" /* yacc.c:1646  */
+    { ((yyvsp[-9].instruccion))[1] = (Instruccion)(yyvsp[-1].instruccion); ((yyvsp[-9].instruccion))[2] = (Instruccion)(yyvsp[0].instruccion);
+			  ((yyvsp[-9].instruccion))[3] = (Instruccion)(yyvsp[-8].instruccion); ((yyvsp[-9].instruccion))[4] = (Instruccion)(yyvsp[-6].instruccion);
+			  ((yyvsp[-9].instruccion))[5] = (Instruccion)(yyvsp[-4].instruccion); }
 #line 1665 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 171 "fnt/parser.y" /* yacc.c:1646  */
+#line 229 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(DETENER); (yyval.instruccion) = (yyvsp[0].instruccion); }
 #line 1671 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 174 "fnt/parser.y" /* yacc.c:1646  */
+#line 234 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = codificar3(codigo_mientras, DETENER, DETENER); }
 #line 1677 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 177 "fnt/parser.y" /* yacc.c:1646  */
+#line 238 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = codificar(codigo_si);
-                                                          codificar3(DETENER, DETENER, DETENER); }
+			  codificar3(DETENER, DETENER, DETENER); }
 #line 1684 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 181 "fnt/parser.y" /* yacc.c:1646  */
+#line 244 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = codificar3(codigo_ciclo, DETENER, DETENER);
-                                                          codificar3(DETENER, DETENER, DETENER); }
+			  codificar3(DETENER, DETENER, DETENER); }
 #line 1691 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 185 "fnt/parser.y" /* yacc.c:1646  */
+#line 250 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(DETENER); (yyval.instruccion) = apuntador_de_programa; }
 #line 1697 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 188 "fnt/parser.y" /* yacc.c:1646  */
+#line 255 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = apuntador_de_programa; }
 #line 1703 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 189 "fnt/parser.y" /* yacc.c:1646  */
+#line 258 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(DETENER); }
 #line 1709 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 190 "fnt/parser.y" /* yacc.c:1646  */
+#line 261 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(DETENER); }
 #line 1715 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 193 "fnt/parser.y" /* yacc.c:1646  */
-    {  printw("\t"); refresh();
-                                                          (yyval.instruccion) = apuntador_de_programa; }
+#line 266 "fnt/parser.y" /* yacc.c:1646  */
+    { printw("\t"); refresh();
+			  (yyval.instruccion) = apuntador_de_programa; }
 #line 1722 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 195 "fnt/parser.y" /* yacc.c:1646  */
+#line 270 "fnt/parser.y" /* yacc.c:1646  */
     { printw("\t"); refresh(); }
 #line 1728 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 196 "fnt/parser.y" /* yacc.c:1646  */
+#line 273 "fnt/parser.y" /* yacc.c:1646  */
     { printw("\t"); refresh(); }
 #line 1734 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 200 "fnt/parser.y" /* yacc.c:1646  */
+#line 280 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = codificar2(meter_constante, (Instruccion) (yyvsp[0].simbolo)); }
 #line 1740 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 201 "fnt/parser.y" /* yacc.c:1646  */
+#line 283 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = codificar3(meter_variable, (Instruccion) (yyvsp[0].simbolo), evaluar); }
 #line 1746 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 202 "fnt/parser.y" /* yacc.c:1646  */
+#line 286 "fnt/parser.y" /* yacc.c:1646  */
     { codificar2(meter_constante, (Instruccion) (yyvsp[0].simbolo)); }
 #line 1752 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 203 "fnt/parser.y" /* yacc.c:1646  */
+#line 289 "fnt/parser.y" /* yacc.c:1646  */
     { solo_definicion("$");
-                                                          (yyval.instruccion) = codificar2(argumento, (Instruccion) (long int) (yyvsp[0].num_args)); }
+			  (yyval.instruccion) = codificar2(argumento, (Instruccion) (long int) (yyvsp[0].num_args)); }
 #line 1759 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 206 "fnt/parser.y" /* yacc.c:1646  */
+#line 295 "fnt/parser.y" /* yacc.c:1646  */
     { codificar2(ejecutar_funcion_programa,
-                                                          (Instruccion)(yyvsp[-3].simbolo)->u.funcion); }
+			  (Instruccion)(yyvsp[-3].simbolo)->u.funcion); }
 #line 1766 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 208 "fnt/parser.y" /* yacc.c:1646  */
+#line 299 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = (yyvsp[-3].instruccion);
-                                                          codificar3(llamada, (Instruccion)(yyvsp[-4].simbolo), (Instruccion) (long int) (yyvsp[-1].num_args));}
-#line 1773 "fnt/parser.tab.c" /* yacc.c:1646  */
+			  codificar3(llamada, (Instruccion)(yyvsp[-4].simbolo), 
+				  (Instruccion) (long int) (yyvsp[-1].num_args));}
+#line 1774 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 210 "fnt/parser.y" /* yacc.c:1646  */
+#line 304 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(sumar); }
-#line 1779 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1780 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 211 "fnt/parser.y" /* yacc.c:1646  */
+#line 307 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(restar); }
-#line 1785 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1786 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 212 "fnt/parser.y" /* yacc.c:1646  */
+#line 310 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(multiplicar); }
-#line 1791 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1792 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 213 "fnt/parser.y" /* yacc.c:1646  */
+#line 313 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(dividir); }
-#line 1797 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1798 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 214 "fnt/parser.y" /* yacc.c:1646  */
+#line 316 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(elevar_a_potencia); }
-#line 1803 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1804 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 215 "fnt/parser.y" /* yacc.c:1646  */
+#line 319 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(elevar_a_potencia_escalar); }
-#line 1809 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1810 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 216 "fnt/parser.y" /* yacc.c:1646  */
+#line 322 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = (yyvsp[-1].instruccion); }
-#line 1815 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1816 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 217 "fnt/parser.y" /* yacc.c:1646  */
+#line 325 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = (yyvsp[0].instruccion); codificar(negar); }
-#line 1821 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1822 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 218 "fnt/parser.y" /* yacc.c:1646  */
+#line 328 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(transponer); }
-#line 1827 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1828 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 219 "fnt/parser.y" /* yacc.c:1646  */
+#line 331 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(mayor_que); }
-#line 1833 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1834 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 220 "fnt/parser.y" /* yacc.c:1646  */
+#line 334 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(mayor_o_igual); }
-#line 1839 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1840 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 221 "fnt/parser.y" /* yacc.c:1646  */
+#line 337 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(menor_que); }
-#line 1845 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1846 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 222 "fnt/parser.y" /* yacc.c:1646  */
+#line 340 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(menor_o_igual); }
-#line 1851 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1852 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 223 "fnt/parser.y" /* yacc.c:1646  */
+#line 343 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(igual_a); }
-#line 1857 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1858 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 224 "fnt/parser.y" /* yacc.c:1646  */
+#line 346 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(distinto_de); }
-#line 1863 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1864 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 225 "fnt/parser.y" /* yacc.c:1646  */
+#line 349 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(disyuncion); }
-#line 1869 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1870 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 226 "fnt/parser.y" /* yacc.c:1646  */
+#line 352 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(conjuncion); }
-#line 1875 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1876 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 227 "fnt/parser.y" /* yacc.c:1646  */
+#line 355 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(condicional); }
-#line 1881 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1882 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 228 "fnt/parser.y" /* yacc.c:1646  */
+#line 358 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = (yyvsp[0].instruccion); codificar(negacion); }
-#line 1887 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1888 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 229 "fnt/parser.y" /* yacc.c:1646  */
+#line 361 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(bicondicional); }
-#line 1893 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1894 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 69:
-#line 230 "fnt/parser.y" /* yacc.c:1646  */
+#line 364 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(disyuncion_exclusiva); }
-#line 1899 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1900 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 231 "fnt/parser.y" /* yacc.c:1646  */
+#line 367 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(incremento_unitario); }
-#line 1905 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1906 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 71:
-#line 232 "fnt/parser.y" /* yacc.c:1646  */
+#line 370 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(decremento_unitario); }
-#line 1911 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1912 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 72:
-#line 235 "fnt/parser.y" /* yacc.c:1646  */
+#line 375 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = codificar(terminar_construccion); }
-#line 1917 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1918 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 73:
-#line 238 "fnt/parser.y" /* yacc.c:1646  */
+#line 380 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(iniciar_vvectores); }
-#line 1923 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1924 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 74:
-#line 239 "fnt/parser.y" /* yacc.c:1646  */
+#line 383 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(continuar_vvectores); }
-#line 1929 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1930 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 75:
-#line 242 "fnt/parser.y" /* yacc.c:1646  */
+#line 388 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(iniciar_vector); }
-#line 1935 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1936 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 76:
-#line 243 "fnt/parser.y" /* yacc.c:1646  */
+#line 391 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(continuar_vector); }
-#line 1941 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1942 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 77:
-#line 244 "fnt/parser.y" /* yacc.c:1646  */
+#line 394 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(continuar_vector); }
-#line 1947 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1948 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 78:
-#line 247 "fnt/parser.y" /* yacc.c:1646  */
+#line 399 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = apuntador_de_programa; }
-#line 1953 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1954 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 79:
-#line 250 "fnt/parser.y" /* yacc.c:1646  */
+#line 404 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(instruccion_imprimir); }
-#line 1959 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1960 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 80:
-#line 251 "fnt/parser.y" /* yacc.c:1646  */
+#line 407 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.instruccion) = codificar2(imprimir_cadena, (Instruccion) (yyvsp[0].simbolo)); }
-#line 1965 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1966 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 81:
-#line 252 "fnt/parser.y" /* yacc.c:1646  */
+#line 410 "fnt/parser.y" /* yacc.c:1646  */
     { codificar(instruccion_imprimir); }
-#line 1971 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1972 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 253 "fnt/parser.y" /* yacc.c:1646  */
+#line 413 "fnt/parser.y" /* yacc.c:1646  */
     { codificar2(imprimir_cadena, (Instruccion) (yyvsp[0].simbolo)); }
-#line 1977 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 1978 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 83:
-#line 256 "fnt/parser.y" /* yacc.c:1646  */
-    { (yyvsp[0].simbolo)->tipo = FUNCION; dentro_de_definicion = 1; }
-#line 1983 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 418 "fnt/parser.y" /* yacc.c:1646  */
+    { (yyvsp[0].simbolo)->tipo = FUNCION; 
+			  dentro_de_definicion = 1; }
+#line 1985 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 84:
-#line 257 "fnt/parser.y" /* yacc.c:1646  */
-    { codificar(regreso_de_procedimiento); definir((yyvsp[-7].simbolo));
-                                                          dentro_de_definicion = 0; }
-#line 1990 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 421 "fnt/parser.y" /* yacc.c:1646  */
+    { codificar(regreso_de_procedimiento); 
+			  definir((yyvsp[-7].simbolo));
+			  dentro_de_definicion = 0; }
+#line 1993 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 85:
-#line 259 "fnt/parser.y" /* yacc.c:1646  */
-    { (yyvsp[0].simbolo)->tipo = PROCEDIMIENTO; dentro_de_definicion = 1; }
-#line 1996 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 426 "fnt/parser.y" /* yacc.c:1646  */
+    { (yyvsp[0].simbolo)->tipo = PROCEDIMIENTO; 
+			  dentro_de_definicion = 1; }
+#line 2000 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 86:
-#line 260 "fnt/parser.y" /* yacc.c:1646  */
-    { codificar(regreso_de_procedimiento); definir((yyvsp[-7].simbolo));
-                                                          dentro_de_definicion = 0; }
-#line 2003 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 429 "fnt/parser.y" /* yacc.c:1646  */
+    { codificar(regreso_de_procedimiento); 
+			  definir((yyvsp[-7].simbolo));
+			  dentro_de_definicion = 0; }
+#line 2008 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 90:
-#line 269 "fnt/parser.y" /* yacc.c:1646  */
+#line 442 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.num_args) = 0; }
-#line 2009 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 2014 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 91:
-#line 270 "fnt/parser.y" /* yacc.c:1646  */
+#line 445 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.num_args) = 1; }
-#line 2015 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 2020 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
   case 92:
-#line 271 "fnt/parser.y" /* yacc.c:1646  */
+#line 448 "fnt/parser.y" /* yacc.c:1646  */
     { (yyval.num_args) = (yyvsp[-2].num_args) + 1; }
-#line 2021 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 2026 "fnt/parser.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 2025 "fnt/parser.tab.c" /* yacc.c:1646  */
+#line 2030 "fnt/parser.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2249,7 +2254,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 273 "fnt/parser.y" /* yacc.c:1906  */
+#line 451 "fnt/parser.y" /* yacc.c:1906  */
 
 
 jmp_buf punto_de_inicio;
@@ -2260,100 +2265,100 @@ extern Instruccion *programa_base;
 
 int main (int agrc, char *argv[])
 {
-        iniciar_ncurses();
-        nombre_programa = argv[0];
-        inicializar();
-        signal(SIGUSR1, error_matrices_catch);
-        setjmp(punto_de_inicio);
-        printw("\nExpresión> "); refresh();
-        for(iniciar_codificacion(); yyparse(); iniciar_codificacion()){
-                ejecutar(programa_base);
-                printw("Expresión> "); refresh();
-        }
-        endwin();
-        free(linea);
-        return 0;
+	iniciar_ncurses();
+	nombre_programa = argv[0];
+	inicializar();
+	signal(SIGUSR1, error_matrices_catch);
+	setjmp(punto_de_inicio);
+	printw("\nExpresión> "); refresh();
+	for(iniciar_codificacion(); yyparse(); iniciar_codificacion()){
+		ejecutar(programa_base);
+		printw("Expresión> "); refresh();
+	}
+	endwin();
+	free(linea);
+	return 0;
 }
 
 void iniciar_ncurses()
 {
-        int x, y;
-        setlocale(LC_ALL, "");
-        initscr();
-        getmaxyx(stdscr, y, x);
-        raw();
-        keypad(stdscr, TRUE);
-        idlok(stdscr, TRUE);
-        wsetscrreg(stdscr, 0, y);
-        scrollok(stdscr, TRUE);
-        noecho();
-        start_color();
-        use_default_colors();
-        init_pair(1, COLOR_BLUE, -1);
-        init_pair(2, COLOR_RED, -1);
-        linea = malloc(sizeof(int) * x);
-        char *lin1 = "Calculadora de matrices";
-        char *lin2 = "Ricardo Quezada Figueroa";
-        char *lin3 = "Compiladores";
-        char *lin4 = "ESCOM - IPN";
-        char *lin5 = "Presiona <Enter> para iniciar";
-        attron(A_BOLD);
-        attron(COLOR_PAIR(1));
-        mvprintw(y/2 - 2, (x - strlen(lin1)) / 2, "%s", lin1);
-        attroff(COLOR_PAIR(1));
-        attroff(A_BOLD);
-        mvprintw(y/2 - 1, (x - strlen(lin2)) / 2, "%s", lin2);
-        mvprintw(y/2 - 0, (x - strlen(lin3)) / 2, "%s", lin3);
-        mvprintw(y/2 + 1, (x - strlen(lin4)) / 2, "%s", lin4);
-        mvprintw(y - 1, (x - strlen(lin5)) / 2, "%s", lin5);
-        refresh();
-        getch();
-        clear();
-        move(0, 0);
-        refresh();
+	int x, y;
+	setlocale(LC_ALL, "");
+	initscr();
+	getmaxyx(stdscr, y, x);
+	raw();
+	keypad(stdscr, TRUE);
+	idlok(stdscr, TRUE);
+	wsetscrreg(stdscr, 0, y);
+	scrollok(stdscr, TRUE);
+	noecho();
+	start_color();
+	use_default_colors();
+	init_pair(1, COLOR_BLUE, -1);
+	init_pair(2, COLOR_RED, -1);
+	linea = malloc(sizeof(int) * x);
+	char *lin1 = "Calculadora de matrices";
+	char *lin2 = "Ricardo Quezada Figueroa";
+	char *lin3 = "Compiladores";
+	char *lin4 = "ESCOM - IPN";
+	char *lin5 = "Presiona <Enter> para iniciar";
+	attron(A_BOLD);
+	attron(COLOR_PAIR(1));
+	mvprintw(y/2 - 2, (x - strlen(lin1)) / 2, "%s", lin1);
+	attroff(COLOR_PAIR(1));
+	attroff(A_BOLD);
+	mvprintw(y/2 - 1, (x - strlen(lin2)) / 2, "%s", lin2);
+	mvprintw(y/2 - 0, (x - strlen(lin3)) / 2, "%s", lin3);
+	mvprintw(y/2 + 1, (x - strlen(lin4)) / 2, "%s", lin4);
+	mvprintw(y - 1, (x - strlen(lin5)) / 2, "%s", lin5);
+	refresh();
+	getch();
+	clear();
+	move(0, 0);
+	refresh();
 }
 
 void comprobacion(Simbolo *simbolo)
 {
-        if(simbolo->tipo == INDEFINIDO)
-                error_en_ejecucion("Variable no definida", simbolo->nombre);
+	if(simbolo->tipo == INDEFINIDO)
+		error_en_ejecucion("Variable no definida", simbolo->nombre);
 }
 
 void actualizar_res(Matriz *matriz)
 {
-        Simbolo *simbolo = buscar("res");
-        simbolo->u.valor = matriz;
+	Simbolo *simbolo = buscar("res");
+	simbolo->u.valor = matriz;
 }
 
 void yyerror (char *mensaje)
 {
-        peligro(mensaje, (char *) 0);
+	peligro(mensaje, (char *) 0);
 }
 
 void peligro (char *mensaje, char *detalle)
 {
-        attron(COLOR_PAIR(2));
-        printw("%s: %s.\n", nombre_programa, mensaje);
-        if (detalle)
-                printw(" %s. ", detalle);
-        printw("Cerca de la línea %d.\n", numero_de_linea);
-        attroff(COLOR_PAIR(2));
-        refresh();
+	attron(COLOR_PAIR(2));
+	printw("%s: %s.\n", nombre_programa, mensaje);
+	if (detalle)
+		printw(" %s. ", detalle);
+	printw("Cerca de la línea %d.\n", numero_de_linea);
+	attroff(COLOR_PAIR(2));
+	refresh();
 }
 
 void error_en_ejecucion (char *mensaje, char *detalle)
 {
-        peligro(mensaje, detalle);
-        longjmp(punto_de_inicio, 0);
+	peligro(mensaje, detalle);
+	longjmp(punto_de_inicio, 0);
 }
 
 void error_matrices_catch ()
 {
-        error_en_ejecucion("Excepción de operación con matrices", (char *) 0);
+	error_en_ejecucion("Excepción de operación con matrices", (char *) 0);
 }
 
 void solo_definicion (char *mensaje)
 {
-        if(!dentro_de_definicion)
-                error_en_ejecucion(mensaje, "usado fuera de definición");
+	if(!dentro_de_definicion)
+		error_en_ejecucion(mensaje, "usado fuera de definición");
 }
